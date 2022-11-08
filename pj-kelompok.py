@@ -8,4 +8,3 @@ def rumus_diskon(harga, diskon):
 
 harga = int(input("Harga barang :"))
 diskon = int(input("Total diskon (dalam persen, ex : 5) : "))
-rumus_diskon(harga, diskon)
