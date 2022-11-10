@@ -1,4 +1,5 @@
 def rumus_diskon(harga, diskon):
+    """Rumus Diskon"""
     diskon = int(diskon / 100 * harga)
     jumlah_bayar = int(harga - diskon)
     print("===============Hasil=================")
