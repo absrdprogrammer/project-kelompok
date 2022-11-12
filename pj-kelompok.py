@@ -8,3 +8,4 @@ def rumus_diskon(harga, diskon):
     print("Jumlah yg harus dibayar :", jumlah_bayar)
 
 rumus_diskon(100_000, 10)
+print("123445")
