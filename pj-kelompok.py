@@ -7,6 +7,4 @@ def rumus_diskon(harga, diskon):
     print("Total diskon :", diskon)
     print("Jumlah yg harus dibayar :", jumlah_bayar)
 
-harga = int(input("Harga barang :"))
-diskon = int(input("Total diskon (dalam persen, ex : 5) : "))
-rumus_diskon(harga, diskon)
+rumus_diskon(100_000, 10)
