@@ -7,5 +7,12 @@ def rumus_diskon(harga, diskon):
     print("Total diskon :", diskon)
     print("Jumlah yg harus dibayar :", jumlah_bayar)
 
-rumus_diskon(100_000, 10)
-print("123445")
+
+# choice = "barisan"
+# if choice=="barisan":
+#     list = (input("Silahkan input barisan, pisahkan dengan spasi. (Contoh : 1 2 3 4 5) : ").split(" "))
+#     suku = int(input("Silahkan input suku yg ingin diketahui. (Contoh : 25) : "))
+#     a = int(list[0])
+#     b = int(list[1]) - int(list[0])
+#     hasil = a + (suku - 1) * b
+#     print(f"Suku ke-{suku} dari barisan tersebut adalah {hasil}")
