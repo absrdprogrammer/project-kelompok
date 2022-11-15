@@ -28,5 +28,3 @@ def barisan_deret():
         print(f"Jumlah {suku} suku pertama dari deret tersebut adalah {hasil}")
     else:
         print("Perintah tidak ditemukan. Program exit.")
-
-barisan_deret()
