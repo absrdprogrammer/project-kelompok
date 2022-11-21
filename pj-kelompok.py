@@ -29,50 +29,32 @@ def barisan_deret():
     else:
         print("Perintah tidak ditemukan. Program exit.")
 
-#############################Silmi#####################################
-print('Rumus kecepatan\n')
-print('+'*100, '\n')
+barisan_deret()
 
-def kecepatan():
-    jarak = float(input("Masukkan jarak dalam meter : "))
-    waktu = float(input("Masukkan waktu dalam detik : "))
-    kecepatan = jarak/waktu
-    print("Kecepatan kelereng menggelinding adalah : ", kecepatan, "m/s\n")
-
-def jarak():
-    kecepatan = float(input("Masukkan kecepatan dalam m/s : "))
-    waktu = float(input("Masukkan waktu dalam detik : "))
-    jarak = kecepatan*waktu
-    print("Jarak tempuh kelereng adalah : ", jarak, "m\n")
-
-def waktu():
-    jarak = float(input("Masukkan jarak dalam meter : "))
-    kecepatan = float(input("Masukkan kecepatan dalam m/s : "))
-    waktu = jarak/kecepatan
-    print("Waktu tempuh kelereng adalah : ", waktu, "s\n")
-
-
-def menu():
-    print("Menu")
-    print("1.Kecepatan")
-    print("2.Jarak")
-    print("3.Waktu")
-    print("4.Selesai")
-
-loop = True
-while loop:
-    menu()
-    masukan = input("Masukkan pilihan : ")
-    if masukan == "1":
-        kecepatan()
-    elif masukan == "2":
-        jarak()
-    elif masukan == "3":
-        waktu()
-    elif masukan == "4":
-        print("Program selesai")
-        loop = False
+#############################Silmi###################################
+def menghitung_waktu_tempuh():
+    fitur = ["Kecepatan", "Jarak", "Waktu"]
+    for i in range(3):
+        print(str(i+1) + ". " + fitur[i])
+    pilihan = input("Input nomor program yang akan dipakai : ")
+    if pilihan=="1":
+        jarak = float(input("Masukkan jarak dalam km : "))
+        waktu = float(input("Masukkan waktu dalam jam : "))
+        kecepatan = round(jarak/waktu,2)
+        print(f"Kecepatan yang diperlukan untuk menempuh jarak {jarak} km dalam waktu {waktu} jam adalah {kecepatan} km/jam")
+    elif pilihan=="2":
+        kecepatan = float(input("Masukkan kecepatan dalam km/jam : "))
+        waktu = float(input("Masukkan waktu dalam jam : "))
+        jarak = round(kecepatan*waktu,2)
+        print(f"Jarak yang ditempuh dalam waktu {waktu} jam dengan kecepatan {kecepatan} km/jam adalah {jarak} km")
+    elif pilihan=="3":
+        jarak = float(input("Masukkan jarak dalam km : "))
+        kecepatan = float(input("Masukkan kecepatan dalam km/jam : "))
+        waktu = round(jarak/kecepatan,2)
+        print(f"Waktu yang diperlukan untuk menempuh jarak {jarak} km dengan kecepatan {kecepatan} km/jam adalah {waktu} jam")
     else:
-        print("Input Invalid")
+        print("Perintah tidak ditemukan. Program exit.")
+
+menghitung_waktu_tempuh()
 
 ######################################################################
