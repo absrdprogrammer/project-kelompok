@@ -1,24 +1,25 @@
-def rumus_diskon(harga, diskon):
-    diskon = int(diskon / 100 * harga)
+def rumus_diskon():
+    harga = int(input("Input harga produk : "))
+    diskon = float(input("Input diskon dalam persen (contoh : 10) : "))
+    jumlah_diskon = int(diskon / 100 * harga)
     jumlah_bayar = int(harga - diskon)
     print("Harga barang :", harga)
-    print("Total diskon :", diskon)
-    print("Jumlah yg harus dibayar :", jumlah_bayar)
+    print("Total diskon :", jumlah_diskon)
+    print("Jumlah yg harus dibayar : Rp.", jumlah_bayar)
 
 def barisan_deret():
     fitur = ["Barisan", "Deret"]
     for i in range(2):
         print(f"{i+1}. {fitur[i]}")
     pilihan = input("Input nomor program yang akan dipakai : ")
+    list = (input("Silahkan input barisan, pisahkan dengan spasi. (Contoh : 1 2 3 4 5) : ").split(" "))
     if pilihan=="1":
-        list = (input("Silahkan input barisan, pisahkan dengan spasi. (Contoh : 1 2 3 4 5) : ").split(" "))
         suku = int(input("Silahkan input suku yg ingin diketahui. (Contoh : 25) : "))
         a = float(list[0])
-        b = float(list[1]) - float(list[0])
+        b = float(list[1]) - a
         hasil = a + (suku - 1) * b
         print(f"Suku ke-{suku} dari barisan tersebut adalah {hasil}")
     elif pilihan=="2":
-        list = (input("Silahkan input deret, pisahkan dengan spasi. (Contoh : 1 2 3 4 5) : ").split(" "))
         suku = int(input("Silahkan input jumlah dari berapa suku pertama yg ingin diketahui. (Contoh : 25) : "))
         a = float(list[0])
         b = float(list[1]) - float(list[0])
@@ -91,23 +92,27 @@ def himpunan():
     for h in range(3):
         print(f"{h+1}. {fitur[h]}")
     pilihan = input("Input nomor program yang akan dipakai : ")
-    h1 = input("Silahkan masukan himpunan A, pisah sengan spasi( ) : ").split(" ")
-    h2 = input("Silahkan masukan himpunan B, pisah dengan spasi( ) : ").split(" ")
     hasil = []
     if pilihan == "1" :
+        h1 = input("Silahkan masukan himpunan A, pisah sengan spasi( ) : ").split(" ")
+        h2 = input("Silahkan masukan himpunan B, pisah dengan spasi( ) : ").split(" ")
+        for i in range(len(h1)):
+            if h1[i] not in hasil:
+                hasil.append(h1[i])
         for i in range(len(h2)):
             hasil.append(h2[i])
-        for j in range(len(h1)):
-            if h1[j] not in hasil:
-                hasil.append(h1[j])
     elif pilihan == "2" :
+        h1 = input("Silahkan masukan himpunan A, pisah sengan spasi( ) : ").split(" ")
+        h2 = input("Silahkan masukan himpunan B, pisah dengan spasi( ) : ").split(" ")
         for k in range(len(h2)):
             for l in range(len(h1)):
                 if h2[k] == h1[l]:
                     hasil.append(h2[k])
-    elif pilihan == "3" : 
+    elif pilihan == "3" :
         print("Jenis selisih yg akan dipakai\n1. A-B\n2. B-A")
-        masukan = input("Silahkan input nomor program yang akan dipakai : " )
+        masukan = input("Silahkan input nomor program yang akan dipakai : " )        
+        h1 = input("Silahkan masukan himpunan A, pisah sengan spasi( ) : ").split(" ")
+        h2 = input("Silahkan masukan himpunan B, pisah dengan spasi( ) : ").split(" ") 
         if masukan == "1":
             for m in range(len(h1)):
                 if h1[m] not in h2:
@@ -116,6 +121,9 @@ def himpunan():
             for n in range(len(h2)):
                 if h2[n] not in h1:
                     hasil.append(h2[n])
+        else:
+            print("Input Invalid. Kembali ke menu awal.")
+
     else:
         print("Input Invalid. Program Exit.")
         exit()
@@ -144,10 +152,10 @@ def luas():
         tinggi = int(input("Masukkan panjang tinggi (dalam meter): "))
         luas = alas * tinggi
     elif pilihan=="5":
-        sisiatas = int(input("Masukkan panjang sisi atas (dalam meter): "))
-        sisibawah = int(input("Masukkan panjang sisi bawah (dalam meter): "))
+        sisi1 = int(input("Masukkan panjang sisi atas (dalam meter): "))
+        sisi2 = int(input("Masukkan panjang sisi bawah (dalam meter): "))
         tinggi = int(input("Masukkan tinggi : "))
-        luas = (sisiatas+sisibawah) * tinggi / 2
+        luas = (sisi1+sisi2) * tinggi / 2
     elif pilihan=="6":
         diagonal1 = int(input("Masukkan panjang diagonal pertama (dalam meter): "))
         diagonal2 = int(input("Masukkan panjang diagonal kedua (dalam meter): "))
@@ -165,4 +173,32 @@ def luas():
         exit()
     print(f"Luas : {luas} meter persegi")
 
+is_next = True
+while is_next:
+    print("PROGRAM PERHITUNGAN RUMUS MATEMATIKA")
+    fitur = ["Diskon", "Barisan dan Deret Aritmatika", "Kecepatan, Jarak dan Waktu", "Himpunan", "Volume", "Luas", "Selesai"]
+    for i in range(len(fitur)):
+        print(f"{i+1}. {fitur[i]}")
+    pilihan = input("Input nomor kode program yang akan dipakai : ")
+    if pilihan=="1":
+        rumus_diskon()
+    elif pilihan=="2":
+        barisan_deret()
+    elif pilihan=="3":
+        kec_jrk_wkt()
+    elif pilihan=="4":
+        himpunan()
+    elif pilihan=="5":
+        volume()
+    elif pilihan=="6":
+        luas()
+    elif pilihan=="7":
+        print("Program Selesai.")
+        is_next = False
+    else: 
+        print("Input invalid. Silahkan input ulang.")
+    print("")
+
+
+    
  
