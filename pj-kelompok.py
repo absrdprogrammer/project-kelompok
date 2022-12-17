@@ -12,21 +12,23 @@ def barisan_deret():
     for i in range(2):
         print(f"{i+1}. {fitur[i]}")
     pilihan = input("Input nomor program yang akan dipakai : ")
-    list = (input("Silahkan input barisan, pisahkan dengan spasi. (Contoh : 1 2 3 4 5) : ").split(" "))
     if pilihan=="1":
+        list = (input("Silahkan input barisan, pisahkan dengan spasi. (Contoh : 1 2 3 4 5) : ").split(" "))
         suku = int(input("Silahkan input suku yg ingin diketahui. (Contoh : 25) : "))
         a = float(list[0])
         b = float(list[1]) - a
         hasil = a + (suku - 1) * b
         print(f"Suku ke-{suku} dari barisan tersebut adalah {hasil}")
     elif pilihan=="2":
+        list = (input("Silahkan input barisan, pisahkan dengan spasi. (Contoh : 1 2 3 4 5) : ").split(" "))
         suku = int(input("Silahkan input jumlah dari berapa suku pertama yg ingin diketahui. (Contoh : 25) : "))
         a = float(list[0])
         b = float(list[1]) - float(list[0])
         hasil = float(suku / 2 * (2* a + (suku - 1) * b))
         print(f"Jumlah {suku} suku pertama dari deret tersebut adalah {hasil}")
     else:
-        print("Perintah tidak ditemukan. Program exit.")
+        print("Input invalid. Program exit.")
+        exit()
 
 def kec_jrk_wkt():
     fitur = ["Kecepatan", "Jarak", "Waktu"]
@@ -49,7 +51,8 @@ def kec_jrk_wkt():
         waktu = round(jarak/kecepatan,2)
         print(f"Waktu yang diperlukan untuk menempuh jarak {jarak} km dengan kecepatan {kecepatan} km/jam adalah {waktu} jam")
     else:
-        print("Perintah tidak ditemukan. Program exit.")
+        print("Input invalid. Program exit.")
+        exit()
 
 def volume():
     phi = 3.14
@@ -83,7 +86,7 @@ def volume():
         tinggi = float(input("masukan tinggi (dalam meter): "))
         volume = round(4/3 * phi * r * r * r,2)
     else:
-        print("Perintah tidak ditemukan. Program exit.")
+        print("Input invalid. Program exit.")
         exit()
     print(f"Volume : {volume} meter kubik")
 
@@ -94,7 +97,7 @@ def himpunan():
     pilihan = input("Input nomor program yang akan dipakai : ")
     hasil = []
     if pilihan == "1" :
-        h1 = input("Silahkan masukan himpunan A, pisah sengan spasi( ) : ").split(" ")
+        h1 = input("Silahkan masukan himpunan A, pisah dengan spasi( ) : ").split(" ")
         h2 = input("Silahkan masukan himpunan B, pisah dengan spasi( ) : ").split(" ")
         for i in range(len(h1)):
             if h1[i] not in hasil:
@@ -102,7 +105,7 @@ def himpunan():
         for i in range(len(h2)):
             hasil.append(h2[i])
     elif pilihan == "2" :
-        h1 = input("Silahkan masukan himpunan A, pisah sengan spasi( ) : ").split(" ")
+        h1 = input("Silahkan masukan himpunan A, pisah dengan spasi( ) : ").split(" ")
         h2 = input("Silahkan masukan himpunan B, pisah dengan spasi( ) : ").split(" ")
         for k in range(len(h2)):
             for l in range(len(h1)):
@@ -122,10 +125,10 @@ def himpunan():
                 if h2[n] not in h1:
                     hasil.append(h2[n])
         else:
-            print("Input Invalid. Kembali ke menu awal.")
-
+            print("Input tidak valid. Program exit.")
+            exit()
     else:
-        print("Input Invalid. Program Exit.")
+        print("Input invalid. Program exit.")
         exit()
     hasil.sort()
     print("Hasil :", hasil)
@@ -169,7 +172,7 @@ def luas():
         r = int(input("Masukkan panjang jari-jari (dalam meter): "))
         luas = phi * r * r
     else:
-        print("Input Invalid. Program Exit.")
+        print("Input invalid. Program exit.")
         exit()
     print(f"Luas : {luas} meter persegi")
 
